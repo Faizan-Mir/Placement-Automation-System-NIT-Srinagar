@@ -114,11 +114,25 @@ e. A Simple Dashboard, wherein he can see his class statistics, his current stat
 
 
 
+
+
+Logic for selecting Jobs for a User
+
+1. Unplaced Student: Open for Unplaced, Non-Blocked, Blocked till L11, Blocked till LU, PSU, Super Tier and Open for All including Permanent Blocked. 
+2. Non-Blocked Student: Non-Blocked to higher
+3. Blocked till L11: Blocking till L11 to higher
+4. Blocked till LU: Blocking 
+
+
+
+
 You can assume a demo _id, and on basis of this you can create the entire portal for the student experience. 
 Later this _id will be derived from the authentication process. 
 
 
+Initially, all students start from unplaced. 
 
+api should be /jobs/current/id=${student_id}
 
 
 
