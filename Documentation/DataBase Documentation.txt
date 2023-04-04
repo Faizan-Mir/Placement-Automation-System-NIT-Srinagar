@@ -1,0 +1,128 @@
+Placement Automation System NIT Srinagar Database
+
+Collection Name: Student Data
+Enrolment Number : Primary Key
+Name
+Branch: enum
+Batch: enum
+Contact Details:
+    Email ID
+    Phone No
+    Full Address
+
+Resume Link
+10th Class Marksheet Link
+12th Class Marksheet Link
+Merged PDF of Results till 5th Sem
+Results: 
+    SGPA Array (1st to Current semester)
+    Current CGPA
+Current Status: enum
+Number of Offers
+Current CTC
+Current Job Role
+Current Company
+Job Offers: 
+    Job ID Array (All Job IDs)
+Personal Details
+    Category: enum
+    Father's Name
+    Mother's Name
+    Blood Group
+
+
+
+Collection Name: Jobs
+
+JOB ID : Primary Key auto generated
+Company ID
+CTC 
+CTC Breakdown (if available)
+Role
+Location
+Branches Eligible: enum 
+Category: PSU, LU, L11, Super Tier, Open to all 
+Display Categories: Display to All including PB, Display to All excluding PB, Display to UB, Display to BTL11, Display to BTLU
+Applications Array : Array of all Enrolment Numbers who applied for this job. 
+Selected Array: Array of all Enrolment Numbers selected for this job. 
+Type: enum blokcing, non blocking etc. 
+Additional Details Form Link: Additional details can be collected by the SPOC via this form link. 
+
+
+Collection Name: Companies
+Company ID: Primary Key auto generated
+Associated JOB IDs
+HR Details
+CRC Associated : enum, list of all CRCs
+Category: enum
+Postal Address:
+
+
+
+
+
+
+
+
+
+
+
+Requirements of the Studnet Automation System NIT Srinagar
+
+1. Statistics Dashboard
+    Total Number of Students
+    Number of students placed
+    Number of students placed branchwise and Percentage
+2. All Students Page (Shows Branch wise data)
+    Add Student Option
+3. All Companies Page
+    Add Company Option 
+    List of all Companies that have visited our campus in this academic session. A session change option should be there on top. 
+4. All Jobs Page 
+    Add Job Option
+    When a Job is uploaded, a mail is sent to all eligible students, if the SPOC wants. 
+    For each Job: 
+    Edit Option for each job will also be provided. Whenever there's an edit to a job by SPOC, all eligible students will receive a mail regarding the edit if the SPOC wants. 
+    List of all students who applied for this job (with an option to mark the selected ones)
+        Once is student is marked selected and confirmed, he/she will be sent a mail using nodemailer regarding the selection.
+        An option to select which fields are demanded by the HR.
+    List of all students who got selected for this job
+5. Apply Page (Only open for Candidates)
+    All Current Job Openings will be displayed for which the student is eligible. 
+    Additional Details Form link for each job will be shown for each job. 
+6. Your Offers (Only open for Candidates)
+    In this page, a candidate will be able to see the details of the offers made to him/her. 
+
+
+
+Student User side
+
+1. Whenever a student is authenticated and enters the portal, we will have his authentication tokens and his enrolment Number/ _id. Using this _id we will extract his/her all other information. 
+2. The following pages will be displayed to a student:
+a. All Current Job Openings (Based on the users Branch and current Status)
+/user/jobs
+b. His Profile Page (Where he can edit some information fields)
+/user/profile
+c. All Previous Jobs he/she has applied to and those in which he/she was selected/rejected.
+/user/data
+d. Messages Page. (All relevant info sent by CRCs regarding the recruitment drives)
+/user/messages
+e. A Simple Dashboard, wherein he can see his class statistics, his current status, current Job and how many students are left for L11/LU to open. 
+/user/dashboard 
+
+
+
+
+
+You can assume a demo _id, and on basis of this you can create the entire portal for the student experience. 
+Later this _id will be derived from the authentication process. 
+
+
+
+
+
+
+
+
+
+
